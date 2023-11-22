@@ -2,10 +2,6 @@
 
 Collisions = Object:extend()
 
-function Collisions:update(dt)
-    self:resolveCollisions(ball, paddle, walls, bricks, scoreboard)
-end
-
 function Collisions:resolveCollisions(ball, paddle, walls, bricks, scoreboard)
     collisions:ballPaddleCollision(ball, paddle)
     collisions:ballWallsCollision(ball, walls)

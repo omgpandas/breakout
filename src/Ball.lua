@@ -84,11 +84,19 @@ function Ball:speedup(ballDirection)
             -- Incriment speed.
             self.speedX = self.speedX - 50
         end
+        -- Prevent straight line movement.
+        if self.speedX == 0 then
+            self.speedX = self.speedX - 50
+        end
     -- If ball is moving right ...
     else
         -- If ball is moving slower than top speed (150).
         if self.speedX < maxBallSpeed then
             -- Incriment speed.
+            self.speedX = self.speedX + 50
+        end
+        -- Prevent straight line movement.
+        if self.speedX == 0 then
             self.speedX = self.speedX + 50
         end
     end
@@ -102,11 +110,19 @@ function Ball:slowdown(ballDirection)
             -- Decriment speed.
             self.speedX = self.speedX + 50
         end
+        -- Prevent straight line movement.
+        if self.speedX == 0 then
+            self.speedX = self.speedX + 50
+        end
     -- If ball is moving right ...
     else
         -- If ball is moving faster than slowest speed (-150).
         if self.speedX > -maxBallSpeed then
             -- Decriment speed.
+            self.speedX = self.speedX - 50
+        end
+        -- Prevent straight line movement.
+        if self.speedX == 0 then
             self.speedX = self.speedX - 50
         end
     end

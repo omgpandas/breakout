@@ -29,7 +29,7 @@ function GameOverState:update(dt)
             bricks:constructLevel(level)
             paddle:respawn()
             ball:respawn()
-            stateMachine:change('play')
+            stateMachine:change('title')
         end
     end
 

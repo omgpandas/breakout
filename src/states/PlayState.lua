@@ -6,10 +6,8 @@ function PlayState:update(dt)
     paddle:update(dt)
     ball:update(dt)
     bricks:update(dt)
-    --collisions:resolveCollisions(ball, paddle, walls, bricks, scoreboard)
-    collisions:update(dt)
-    --levels:switchLevel(bricks, ball, levels)
-    levels:update(dt)
+    collisions:resolveCollisions(ball, paddle, walls, bricks, scoreboard)
+    levels:switchLevel(bricks, ball, levels)
 
     -- Debug: Clear level bricks.
     if love.keyboard.wasPressed('c') then

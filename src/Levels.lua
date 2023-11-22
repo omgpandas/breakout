@@ -10,10 +10,6 @@ function Levels:new()
     bricks:constructLevel(self:loadLevel())
 end
 
-function Levels:update(dt)
-    self:switchLevel(bricks, ball, levels)
-end
-
 function Levels:switchLevel(bricks, ball, levels)
     if bricks.noBricks then
         bricks:clearCurrentLevel()

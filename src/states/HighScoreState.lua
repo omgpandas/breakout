@@ -4,6 +4,14 @@ HighScoreState = BaseState:extend()
 
 function HighScoreState:update(dt)
     if love.keyboard.wasPressed('escape') or love.keyboard.wasPressed('enter') or love.keyboard.wasPressed('return') then
+        scoreboard.lives = 3
+        scoreboard.score = 0
+        levels.gameFinished = false
+        levels.currentLevel = 1
+        level = levels:loadLevel()
+        bricks:constructLevel(level)
+        paddle:respawn()
+        ball:respawn()
         stateMachine:change('title')
     end
 end
